@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nonebot_plugin_vits_tts',
-    version='0.1.1',
+    version='0.1.2',
     packages=find_packages(),
     install_requires=[
         'Cython',
@@ -27,7 +27,9 @@ setup(
         'pydub',
         'numba',
         'tencentcloud-sdk-python-tmt',
-        'langdetect'
+        'langdetect',
+        'nonebot-adapter-onebot>=2.0.0',
+        'nonebot2>=2.0.0'
     ],
     author='Redmomn',
     author_email='109732988+Redmomn@users.noreply.github.com',
