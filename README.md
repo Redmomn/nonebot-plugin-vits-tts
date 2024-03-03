@@ -27,14 +27,14 @@
 
 ## 💿 安装
 
-<details>
+<details open>
 <summary>nb-cli</summary>
 
     nb plugin install nonebot-plugin-vits-tts
 
 </details>
 
-<details>
+<details open>
 <summary>pip</summary>
 
     pip install nonebot_plugin_vits_tts
@@ -60,15 +60,6 @@
 假如你的项目配置是这样，则`VITS__VMODEL_PATH`应为`models`，`VITS__VMODEL_FILE_NAME`为`model.pth`，`VITS__CONFIG_FILE_NAME`
 为`config.json`
 
-**注意**  
-所有的模型文件名应为`VITS__VMODEL_FILE_NAME`的值，配置文件名应为`VITS__CONFIG_FILE_NAME`的值，一个文件夹只允许放一个模型和配置文件，
-不同模型使用文件夹分割开来，插件会自动加载所有文件夹下的模型
-
-**使用cuda设备合成音频**
-
-- 安装合适版本的[cuda-toolkit](https://developer.nvidia.com/cuda-toolkit)
-- 需要手动安装GPU版本的pytorch，详见[Pytorch](https://pytorch.org/get-started/locally/)
-
 ```text
 awsomebot
 ├─ .env
@@ -90,17 +81,27 @@ awsomebot
 
 ```
 
+**注意**  
+所有的模型文件名应为`VITS__VMODEL_FILE_NAME`的值，配置文件名应为`VITS__CONFIG_FILE_NAME`的值，一个文件夹只允许放一个模型和配置文件，
+不同模型使用文件夹分割开来，插件会自动加载所有文件夹下的模型
+
+**使用cuda设备合成音频**
+
+- 安装合适版本的[cuda-toolkit](https://developer.nvidia.com/cuda-toolkit)
+- 需要手动安装GPU版本的pytorch，详见[Pytorch](https://pytorch.org/get-started/locally/)
+
 ## 🎉 使用
 
 仅可以在群聊中使用  
 使用方法：
 
-- `[角色]说[要合成的文本]`
-- 发送`/help` 可以获取可用角色列表  
-  目前仅支持简体中文，日语，英文，插件会自动识别要合成文本的语种  
+- `[角色]说[要合成的文本]`  
   例如：
 
     - 宁宁说私のオナニを見てください
+- 发送`/help` 可以获取可用角色列表
+
+目前仅支持简体中文，日语，英文，插件会自动识别要合成文本的语种
 
 ## 模型分享
 
@@ -110,6 +111,6 @@ awsomebot
 
 ## 关于模型训练
 
-Plachtaa/VITS-fast-fine-tuning的[笔记本](https://colab.research.google.com/drive/1pn1xnFfdLK63gVXDwV4zCXfVeo8c-I-0?usp=sharing)
+Plachtaa/VITS-fast-fine-tuning的[笔记本](https://colab.research.google.com/drive/1pn1xnFfdLK63gVXDwV4zCXfVeo8c-I-0?usp=sharing)  
 另外还提供一个我改进过的[笔记本](https://colab.research.google.com/drive/1Uf-ngOqUiDXCPbsm122w56y6nuWiWcnu?usp=sharing)
 ，这个笔记本只保存最新的模型文件，不会将训练的中间文件保存到云盘导致云盘爆掉不能训练
