@@ -64,6 +64,11 @@
 所有的模型文件名应为`VITS__VMODEL_FILE_NAME`的值，配置文件名应为`VITS__CONFIG_FILE_NAME`的值，一个文件夹只允许放一个模型和配置文件，
 不同模型使用文件夹分割开来，插件会自动加载所有文件夹下的模型
 
+**使用cuda设备合成音频**
+
+- 安装合适版本的[cuda-toolkit](https://developer.nvidia.com/cuda-toolkit)
+- 需要手动安装GPU版本的pytorch，详见[Pytorch](https://pytorch.org/get-started/locally/)
+
 ```text
 awsomebot
 ├─ .env
