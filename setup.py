@@ -2,10 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='nonebot_plugin_vits_tts',
-    version='0.1.2',
+    version='0.1.3',
     packages=find_packages(),
     install_requires=[
-        'Cython',
         'torch',
         'torchvision',
         'torchaudio',
