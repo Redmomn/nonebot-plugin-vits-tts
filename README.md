@@ -22,7 +22,8 @@
 
 ## 📖 介绍
 
-基于vits的tts语音生成，适配onebot v11协议
+基于vits的tts语音生成，适配onebot v11协议  
+已兼容pydantic v1&v2
 
 ## 💿 安装
 
