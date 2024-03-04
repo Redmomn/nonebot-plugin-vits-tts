@@ -28,9 +28,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Setup Poetry
+      - name: Install pypa/build
         run: |
-          pip install poetry
+          python -m pip install build --user
 
       - run: |
           echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
@@ -43,10 +43,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish PyPI and Github
+      - name: Build a binary wheel and a source tarball
         run: |
-          poetry build
+          python -m build --sdist --wheel --outdir dist/ .
           ls dist/
+
+      - name: Publish Github
+        run: |
           gh release upload --clobber ${{ env.TAG_NAME }} dist/*.tar.gz dist/*.whl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
