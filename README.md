@@ -105,6 +105,14 @@ awsomebot
 
 ## 模型分享
 
+由我自己训练的模型，目前有以下几个galgame的模型[ATRI](https://huggingface.co/Redmonm/ATRI)，
+[RiddleJoker](https://huggingface.co/Redmonm/RiddleJoker)，
+[千恋万花](https://huggingface.co/Redmonm/SenrenBanka)，
+[魔女的夜宴](https://huggingface.co/Redmonm/SanobaWitch)，
+[星光咖啡馆与死神之蝶](https://huggingface.co/Redmonm/CafeStella)
+
+模型不定期更新，可前往[我的huggingface主页](https://huggingface.co/Redmonm)查看
+
 ## 💡 感谢
 
 - 此插件基于[Plachtaa/VITS-fast-fine-tuning](https://github.com/Plachtaa/VITS-fast-fine-tuning)的代码改进而来
