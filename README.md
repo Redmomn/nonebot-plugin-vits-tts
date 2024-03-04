@@ -45,7 +45,7 @@
 
 | 配置项                         | 类型    | 默认值       | 说明                                                                    |
 |-----------------------------|-------|-----------|-----------------------------------------------------------------------|
-| VITS__DEVICE                | int   | 0         | 使用指定的cuda设备进行tts合成，如果没有指定的显卡会自动使用cpu                                  |
+| VITS__DEVICE                | int   | 0         | 使用指定的cuda设备进行tts合成，如果指定的设备不存在会自动使用cpu进行推理                             |
 | VITS__VMODEL_PATH           | str   | models    | 插件会读取此文件夹下的所有模型                                                       |
 | VITS__AT_BOT                | bool  | false     | 使用语音合成是否需要@bot                                                        |
 | VITS__COOLDOWN              | int   | 0         | 在每个群里生成语音的冷却时间，防止设备负载过大                                               |
@@ -56,6 +56,7 @@
 | VITS__DEFAULT_LENGTH_SCALE  | float | 1         | 整体语速                                                                  |
 | VITS__DEFAULT_NOISE_SCALE   | float | 0.667     | 感情变化程度                                                                |
 | VITS__DEFAULT_NOISE_SCALE_W | float | 0.6       | 音素发音长度                                                                |
+| VITS__AUDIO_CONVERT_TO_MP3  | bool  | false     | 是否将语音转换为mp3格式，默认为wav格式，如果设置为true，需要在设备上安装ffmpeg                       |
 
 假如你的项目配置是这样，则`VITS__VMODEL_PATH`应为`models`，`VITS__VMODEL_FILE_NAME`为`model.pth`，`VITS__CONFIG_FILE_NAME`
 为`config.json`
@@ -105,13 +106,14 @@ awsomebot
 
 ## 模型分享
 
-由我自己训练的模型，目前有以下几个galgame的模型[ATRI](https://huggingface.co/Redmonm/ATRI)，
+由我自己训练的模型，目前有以下几个galgame的模型  
+[ATRI](https://huggingface.co/Redmonm/ATRI)，
 [RiddleJoker](https://huggingface.co/Redmonm/RiddleJoker)，
 [千恋万花](https://huggingface.co/Redmonm/SenrenBanka)，
 [魔女的夜宴](https://huggingface.co/Redmonm/SanobaWitch)，
 [星光咖啡馆与死神之蝶](https://huggingface.co/Redmonm/CafeStella)
 
-模型不定期更新，可前往[我的huggingface主页](https://huggingface.co/Redmonm)查看
+模型不定期更新，可前往我的[huggingface主页](https://huggingface.co/Redmonm)查看
 
 ## 💡 感谢
 

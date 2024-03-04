@@ -4,6 +4,7 @@ from nonebot.log import logger
 from nonebot.rule import Rule
 from nonebot.typing import T_State
 
+from .config import config
 from .rule import is_tts_msg
 from .utils.audio import wav_to_mp3
 from .utils.model import get_model_from_speaker, speakers
@@ -21,12 +22,23 @@ async def _(bot: Bot, event: GroupMessageEvent, state: T_State):
 
     model = get_model_from_speaker(speaker)
     logger.info(f"使用模型{model.model_name}.{speaker}生成语音：{text}")
+    try:
+        audio = await generate_voice(model_path=str(model.model),
+                                     config_path=str(model.config),
+                                     language=lang,
+                                     text=text,
+                                     spk=speaker)
+    except Exception as e:
+        await vits_req.finish(message=f"语音合成出错：{e}")
+        return
 
-    audio = await wav_to_mp3(await generate_voice(model_path=str(model.model),
-                                                  config_path=str(model.config),
-                                                  language=lang,
-                                                  text=text,
-                                                  spk=speaker))
+    if config.audio_convert_to_mp3:
+        try:
+            audio = await wav_to_mp3(audio)
+        except Exception as e:
+            await vits_req.finish(message=f"语音转换出错：{e}")
+            return
+
     await vits_req.finish(message=MessageSegment.record(file=audio))
 
 

@@ -12,6 +12,15 @@ temp_folder = tempfile.gettempdir()
 
 
 async def wav_to_mp3(wav_data: bytes) -> bytes:
+    try:
+        audio = await wav_to_mp3_1(wav_data)
+        return audio
+    except:
+        audio = await wav_to_mp3_2(wav_data)
+        return audio
+
+
+async def wav_to_mp3_1(wav_data: bytes) -> bytes:
     """
     wav格式转换为mp3
     :param wav_data: wav的二进制数据

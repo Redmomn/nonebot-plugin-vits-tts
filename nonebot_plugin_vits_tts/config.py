@@ -24,6 +24,8 @@ class _ScopedConfig(BaseModel):
     default_length_scale: float = 1
     default_noise_scale: float = .667
     default_noise_scale_w: float = .6
+    wav_to_mp3: bool = False
+    audio_convert_to_mp3: bool = False
 
     @field_validator("vmodel_path")
     @classmethod
