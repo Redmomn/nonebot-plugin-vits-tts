@@ -1,14 +1,18 @@
 import pathlib
 
 try:
+    # pydantic v2
     from nonebot import get_plugin_config
 except ImportError:
+    # pydantic v1
     from nonebot import get_driver
 from pydantic import BaseModel
 
 try:
+    # pydantic v2
     from pydantic import field_validator
 except ImportError:
+    # pydantic v1
     from pydantic import validator as field_validator
 
 

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nonebot_plugin_vits_tts',
-    version='0.1.5',
+    version='0.1.6',
     packages=find_packages(),
     install_requires=[
         'torch',
@@ -33,7 +33,7 @@ setup(
     author='Redmomn',
     author_email='109732988+Redmomn@users.noreply.github.com',
     description='nonebot-plugin-vits-tts',
-    long_description=open('README.md', encoding='utf*8').read(),
+    long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
     license='Apache-2.0',
     keywords=['nonebot2', 'vits', 'tts'],
