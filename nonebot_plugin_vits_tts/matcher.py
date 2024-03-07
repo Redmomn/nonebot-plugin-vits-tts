@@ -10,7 +10,7 @@ from .utils.audio import wav_to_mp3
 from .utils.model import get_model_from_speaker, speakers
 from .vits import generate_voice
 
-vits_req = on_regex(r"^(.*)说(.*)", rule=Rule(is_tts_msg))
+vits_req = on_regex(r"^(.*?)说(.*)", rule=Rule(is_tts_msg))
 help_req = on_command("help", aliases={"帮助", "语音帮助", "语音合成帮助"})
 
 
