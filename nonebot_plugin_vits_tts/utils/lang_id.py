@@ -18,7 +18,6 @@ if config.tencent_secret_key and config.tencent_secret_id:
         cred = credential.Credential(config.tencent_secret_id, config.tencent_secret_key)
         httpProfile = HttpProfile()
         httpProfile.endpoint = "tmt.tencentcloudapi.com"
-        httpProfile.req
         clientProfile = ClientProfile()
         clientProfile.httpProfile = httpProfile
         client = tmt_client.TmtClient(cred, "ap-beijing", clientProfile)
